@@ -1,0 +1,4 @@
+---Films---
+1. return 200 status on /films endpoint
+2. return 200 status on /films/?page=1 endpoint
+3. return 404 status on not valid page /films/?page=2
