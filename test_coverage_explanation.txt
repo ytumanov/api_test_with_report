@@ -1,0 +1,4 @@
+1. Requests post/put/delete for Endpoints films, films/1, people, peoples/1 etc. were not covered in tests,
+because it returns data same as on GET by default.
+2. More low-level verifications could be added, like validating URLs using regex, checking ids in people.url/films.url etc.
+3. No need to check similar film-ids/people-ids, because it covered on boundary values.

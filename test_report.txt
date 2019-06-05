@@ -1,0 +1,33 @@
+
+
+Start
+  GET all films
+    ✓ should return OK and results on /films endpoint (1993ms)
+    ✓ should return OK and results on /films/?page=1 endpoint (1055ms)
+    ✓ should return 404 status and Not found detail on not valid page /films/?page=2 (322ms)
+    ✓ should have count equal to results.count and each result in results should have required keys(based on schema) (1659ms)
+
+  GET film by id
+    ✓ should return OK and results on /films/1 by id (653ms)
+    ✓ should return OK and results on /films/7 by id (685ms)
+    ✓ should return 404 status and Not found detail on not valid /films/8 endpoint (609ms)
+    ✓ should have created/edited type date-time (622ms)
+
+  GET all people
+    ✓ should return OK and results on /people endpoint (1154ms)
+    ✓ should return OK and results on /people/?page=1 endpoint (889ms)
+    ✓ should return OK and results on /people/?page=last_valid endpoint (1547ms)
+    ✓ should return 404 status Not found on not valid page /people/?page=last_valid + 1 (1986ms)
+    ✓ should have count equal to results.count and each result in results should have required keys(based on schema) (2314ms)
+
+  GET people by id
+    ✓ should return OK and results on /people/1 by id Each element on array like films(and others) should contain "films" in each link if not empty (584ms)
+    ✓ should return OK and results on /people/40 by id (607ms)
+    ✓ should have created/edited type date-time (620ms)
+    ✓ should return OK and results on /people/last_valid endpoint (1340ms)
+    ✓ should return 404 status and Not found detail on not valid /films/last_valid + 1 endpoint (1832ms)
+
+FINISHED, TOTAL TIME EXECUTION IN SECONDS: 
+
+  18 passing (20s)
+

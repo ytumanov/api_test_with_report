@@ -1,4 +1,91 @@
+  ---People---
+1. should return OK and results on /people endpoint
+Expected result:
+  1.1. response is 200.
+  1.2. count - type number, results - type array, prev - null, next string type.
+
+2. should return OK and results on /people/?page=1 endpoint
+Expected result:
+  2.1. response is 200.
+  2.2. count - type number, results - type array, prev - null, next string type.
+
+3. should return 404 status and Not found detail on not valid page /people/?page=last_valid + 1
+Expected result:
+  3.1. response is 404.
+  3.2. detail is 'Not found'.
+
+4. should return OK and results on /people/?page=last_valid endpoint
+Expected result:
+  4.1. response is 200.
+  4.2. count - type number, results - type array, prev - string type, next null.
+
+5. should have count equal to results.count and each result in results should have required keys(based on schema)
+  5.1. response is 200.
+  5.2. count and results.count is equal.
+  5.3. required values are exist - ["name","height","mass","hair_color","skin_color","eye_color","birth_year","gender","homeworld","films","species","vehicles","starships","url","created","edited"].
+
+6. should return OK and data about people on endpoint /people/1. Each element on array like films(and others) should contain 'films' in each link if not empty. 
+  6.1. response is 200.
+  6.2. Each element on array films contains 'films' in each link.
+  6.3. Each element on array starships contains 'starships' in each link.
+  6.4. Each element on array vehicles contains 'vehicles' in each link.
+  6.5. Each element on array species contains 'species' in each link.
+  6.6. Element  'planets' in link.
+
+7. should have 'people' inside 'url'.
+
+8. should have created/edited type date-time.
+
+9. should return OK and results on /people/last_valid endpoint
+Expected result:
+  9.1. response is 200.
+  9.2. result - type object
+
+10. should return 404 status and Not found detail on not valid /people/last_valid + 1 endpoint
+Expected result:
+  10.1. response is 404.
+  10.2. detail is 'Not found'.
+
+
 ---Films---
-1. return 200 status on /films endpoint
-2. return 200 status on /films/?page=1 endpoint
-3. return 404 status on not valid page /films/?page=2
+1. should return OK and results on /films endpoint
+Expected result:
+  1.1. response is 200.
+  1.2. count - type number, results - type array, prev - null, next null.
+
+2. should return OK and results on /films/?page=1 endpoint
+Expected result:
+  2.1. response is 200.
+  2.2. count - type number, results - type array, prev - null, next null.
+
+3. should return 404 status and Not found detail on not valid page /films/?page=2
+Expected result:
+  3.1. response is 404.
+  3.2. detail is 'Not found'.
+
+4. should have count equal to results.count and each result in results should have required keys(based on schema)
+  4.1. response is 200.
+  4.2. count and results.count is equal.
+  4.3. required values are exist and not empty - ["title","episode_id","opening_crawl","director","producer","release_date","characters","planets","starships","vehicles","species","url","created","edited"].
+
+5. should return OK and data about film on endpoint /films/1. Each element on array like planets(and others) should contain 'planets' in each link. 
+  5.1. response is 200.
+  5.2. Each element on array characters contains 'people' in each link.
+  5.3. Each element on array planets contains 'planets' in each link.
+  5.4. Each element on array starships contains 'starships' in each link.
+  5.5. Each element on array vehicles contains 'vehicles' in each link.
+  5.6. Each element on array species contains 'species' in each link.
+
+6. should have 'films' inside 'url'.
+
+7. should return OK and results on /films/7 endpoint
+Expected result:
+  7.1. response is 200.
+  7.2. result - type object
+
+8. should return 404 status and Not found detail on not valid /films/8 endpoint
+Expected result:
+  8.1. response is 404.
+  8.2. detail is 'Not found'.
+
+9. should have created/edited type date-time.

@@ -15,3 +15,5 @@ $ npm i
 $ npm run test
 ```
 
+# Test execution report is in test_report.txt file
+
